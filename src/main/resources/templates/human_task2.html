@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Список пользователей</title>
+</head>
+<body>
+
+<form th:action="@{/human_task1n2_controller}" method="get">
+
+  <input type="text" name="fromAge" th:value="${fromAge}" placeholder="От возраста">
+
+  <input type="text" name="toAge" th:value="${toAge}" placeholder="До возраста">
+
+  <button type="submit">Отправить данные формы</button>
+
+  <div th:each="human : ${humansByAge}" style="border-bottom: 1px solid #ccc;">
+    <p>Имя: <b th:text="${human.getName()}"></b></p>
+    <p>Возраст: <b th:text="${human.getAge()}"></b></p>
+  </div>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список городов</title>
+</head>
+<body>
+
+<div th:each="city : ${citiesEntry}" style="border-bottom: 1px solid #ccc;">
+    <p th:text="${city.getKey()}"></p>
+    <p th:text="${city.getValue()}"></p>
+</div>
+<p>Среднее количество жителей: <b th:text="${averagePopulation}"></b></p>
+
+</body>
+</html>
